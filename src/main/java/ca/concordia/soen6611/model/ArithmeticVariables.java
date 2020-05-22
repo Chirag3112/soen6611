@@ -11,6 +11,7 @@ public class ArithmeticVariables {
 	int min;
 	int max;
 	int median;
+
 	/**
 	 * @return the min
 	 */

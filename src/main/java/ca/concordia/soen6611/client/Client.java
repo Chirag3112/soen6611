@@ -3,12 +3,27 @@
  */
 package ca.concordia.soen6611.client;
 
+import java.util.ArrayList;
+
+import ca.concordia.soen6611.model.*;
+
 /**
- * @author chirag
+ * @author Jaiganesh
  *
  */
 public class Client {
+
 	public static void main(final String[] args) {
-	
+		
+		
+		ArrayList<Integer> dataset = Dataset.generateDataset(1000);
+		
+		int min = Calculation.findMin(dataset);
+		int max = Calculation.findMax(dataset);
+
+		System.out.println(min);
+		System.out.println(max);
+		
+		
 	}
 }
