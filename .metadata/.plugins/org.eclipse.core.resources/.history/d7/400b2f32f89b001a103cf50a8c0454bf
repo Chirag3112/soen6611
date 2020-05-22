@@ -1,0 +1,15 @@
+package ca.concordia.soen6611.model;
+
+public class GenerateDataset {
+	
+	public static int [] createDataset(){
+
+        int dataset[] = new int[1000];
+        for(int i = 0; i < 1000; i++){
+            dataset[i] = (int)(Math.random()*1000);
+        }
+        return dataset;
+    }
+}
+
+

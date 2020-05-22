@@ -1,0 +1,26 @@
+package ca.concordia.soen6611.model;
+import java.util.Arrays;
+
+public class Calculation {
+	
+	 public static int findMin(int arg []){
+
+	        int min = 0;
+	        int dataset[] = arg;
+	        Arrays.sort(dataset);
+	        min = dataset[0];
+	        return min;
+	        
+	 }
+	 
+	 public static int findMax(int arg []){
+
+	        int max = 0;
+	        int dataset[] = arg;
+	        Arrays.sort(dataset);
+	        max = dataset[dataset.length-1];
+	        return max;
+	        
+	 }
+
+}

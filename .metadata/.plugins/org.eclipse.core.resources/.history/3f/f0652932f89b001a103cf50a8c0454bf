@@ -1,0 +1,5 @@
+package ca.concordia.soen6611.model;
+
+public class GenerateDataset {
+
+}
