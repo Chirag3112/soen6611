@@ -10,7 +10,9 @@ package ca.concordia.soen6611.model;
 public class ArithmeticVariables {
 	int min;
 	int max;
-	int median;
+	float median;
+	float arithmeticMean;
+	float meanAbsoluteDivision;
 	/**
 	 * @return the min
 	 */
@@ -38,13 +40,37 @@ public class ArithmeticVariables {
 	/**
 	 * @return the median
 	 */
-	public int getMedian() {
+	public float getMedian() {
 		return median;
 	}
 	/**
 	 * @param median the median to set
 	 */
-	public void setMedian(int median) {
+	public void setMedian(float median) {
 		this.median = median;
+	}
+	/**
+	 * @return the arithmetic mean
+	 */
+	public float getArithmeticMean() {
+		return arithmeticMean;
+	}
+	/**
+	 * @param arithmeticMean the mean to set
+	 */
+	public void setArithmeticMean(float arithmeticMean) {
+		this.arithmeticMean = arithmeticMean;
+	}
+	/**
+	 * @return mean absolute division(MAD)
+	 */
+	public float getMeanAbsoluteDivision() {
+		return meanAbsoluteDivision;
+	}
+	/**
+	 * @param meanAbsoluteDivision the MAD to set
+	 */
+	public void setMeanAbsoluteDivision(float meanAbsoluteDivision) {
+		this.meanAbsoluteDivision = meanAbsoluteDivision;
 	}
 }
