@@ -16,7 +16,7 @@ public class Dataset {
 	 * @param n the maximum number of values in the dataset
 	 * @return dataset the dataset containing n values between 0 and 1000
 	 */
-	public static ArrayList<Integer> generateDataset(int n){
+	public ArrayList<Integer> generateDataset(int n){
 		
 		ArrayList<Integer> dataset = new ArrayList<Integer>();
 		
