@@ -9,6 +9,7 @@ import ca.concordia.soen6611.controller.StatisticalController;
 import ca.concordia.soen6611.model.ArithmeticMean;
 import ca.concordia.soen6611.model.Calculation;
 import ca.concordia.soen6611.model.Dataset;
+import ca.concordia.soen6611.model.MeanAbsoluteDivision;
 
 /**
  * @author Jaiganesh
@@ -21,7 +22,8 @@ public class Client {
 		Calculation calculate=new Calculation();
 		Dataset dataSet=new Dataset();
 		ArithmeticMean aMean= new ArithmeticMean();
-		StatisticalController controller=new StatisticalController(calculate,dataSet,aMean);
+		MeanAbsoluteDivision mAD = new MeanAbsoluteDivision();
+		StatisticalController controller=new StatisticalController(calculate, dataSet, aMean, mAD);
 		
 		ArrayList<Integer> al= dataSet.generateDataset(1000);
 		System.out.println(al.size());
@@ -30,13 +32,15 @@ public class Client {
 		int max = controller.findMaximum(al);
 		int median = controller.findMedian(al);
 		int mode = controller.findMode(al);
-		int mean= controller.findArithmeticMean(al);
+		int arithmeticMean= controller.findArithmeticMean(al);
+		float meanAbsoluteDivision = controller.findMeanAbsoluteDivision(al, arithmeticMean);
 	
-		System.out.println(min);
-		System.out.println(max);
-		System.out.println(median);
-		System.out.println(mode);
-		System.out.println("Arithmetic Mean calculated is: "+ " "+ mean);
+		System.out.println("Minimum is " + min);
+		System.out.println("Maximum is " + max);
+		System.out.println("Median is " + median);
+		System.out.println("Mode is " + mode);
+		System.out.println("Arithmetic Mean calculated is " + arithmeticMean);
+		System.out.println("Mean Absolute Division(MAD) is " + meanAbsoluteDivision);
 		
 		
 	}

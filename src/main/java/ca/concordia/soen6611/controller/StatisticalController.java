@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import ca.concordia.soen6611.model.ArithmeticMean;
 import ca.concordia.soen6611.model.Calculation;
 import ca.concordia.soen6611.model.Dataset;
+import ca.concordia.soen6611.model.MeanAbsoluteDivision;
 
 /**
  * This class is the controller for all other classes
@@ -19,12 +20,14 @@ public class StatisticalController {
 	private Calculation calculate;
 	private Dataset dataSet;
 	private ArithmeticMean aMean;
+	private MeanAbsoluteDivision meanAbsoluteDivision;
 	
-	public StatisticalController(Calculation calculate, Dataset dataSet, ArithmeticMean aMean) 
+	public StatisticalController(Calculation calculate, Dataset dataSet, ArithmeticMean aMean, MeanAbsoluteDivision meanAbsoluteDivision) 
 	{ 
 		this.calculate= calculate;
 		this.dataSet= dataSet;
 		this.aMean= aMean;
+		this.meanAbsoluteDivision = meanAbsoluteDivision;
 	}
 
 	public ArrayList<Integer> generateDataset(int n){
@@ -49,5 +52,16 @@ public class StatisticalController {
 	
 	public int findArithmeticMean(ArrayList<Integer> amean) {
 		return aMean.findArithmeticMean(amean);
+	}
+	
+	/**
+	 * @param mad data-set on which MAD calculation to be performed
+	 * @param arithmeticMean
+	 * @return the MAD value for a given data-set
+	 */
+	public float findMeanAbsoluteDivision(ArrayList<Integer> mad, int arithmeticMean){
+		return meanAbsoluteDivision.findMeanAbsoluteDivision(mad, arithmeticMean);
+//		System.out.println("Result in controller is " + answer);
+//		return answer;
 	}
 }
