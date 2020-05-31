@@ -13,7 +13,7 @@ import ca.concordia.soen6611.model.MeanAbsoluteDivision;
 /**
  * This class is the controller for all other classes
  * @author chirag
- *
+ * @author PIYUSH
  */
 public class StatisticalController {
 
@@ -22,6 +22,13 @@ public class StatisticalController {
 	private ArithmeticMean aMean;
 	private MeanAbsoluteDivision meanAbsoluteDivision;
 	
+	/**
+	 * This is the constructor that initializes the class properties
+	 * @param calculate
+	 * @param dataSet
+	 * @param aMean
+	 * @param meanAbsoluteDivision
+	 */
 	public StatisticalController(Calculation calculate, Dataset dataSet, ArithmeticMean aMean, MeanAbsoluteDivision meanAbsoluteDivision) 
 	{ 
 		this.calculate= calculate;
@@ -30,26 +37,56 @@ public class StatisticalController {
 		this.meanAbsoluteDivision = meanAbsoluteDivision;
 	}
 
+	/**
+	 * This method generates the data set of a given size
+	 * @param n integer value of size passed as parameter
+	 * @return the data-set of a given size
+	 */
 	public ArrayList<Integer> generateDataset(int n){
 		return dataSet.generateDataset(n);
 	}
 
+	/**
+	 * This method finds the minimum element from the data set
+	 * @param arg data set passed as method parameter
+	 * @return minimum value from data set
+	 */
 	public int findMinimum(ArrayList<Integer> arg) {
 		return calculate.findMin(arg);
 	}
 
+	/**
+	 * This method finds the maximum element from the data set
+	 * @param arg data set passed as method parameter
+	 * @return maximum value from data set
+	 */
 	public int findMaximum(ArrayList<Integer> arg) {
 		return calculate.findMax(arg);
 	}
 
+	/**
+	 * This method finds the median of the data set
+	 * @param med data set passed as method parameter
+	 * @return median value of the data set
+	 */
 	public int findMedian(ArrayList<Integer> med) {
 		return calculate.findMed(med);
 	}
 
+	/**
+	 * This method finds the mode of the data set
+	 * @param mod data set passed as method parameter
+	 * @return mode value of the data set
+	 */
 	public int findMode(ArrayList<Integer> mod) {
 		return calculate.findMod(mod);
 	}
 	
+	/**
+	 * This method finds the arithmetic mean of the data set
+	 * @param amean data set passed as method parameter
+	 * @return the AM value of the data set
+	 */
 	public int findArithmeticMean(ArrayList<Integer> amean) {
 		return aMean.findArithmeticMean(amean);
 	}
@@ -57,11 +94,9 @@ public class StatisticalController {
 	/**
 	 * @param mad data-set on which MAD calculation to be performed
 	 * @param arithmeticMean
-	 * @return the MAD value for a given data-set
+	 * @return the MAD value of the data set
 	 */
 	public float findMeanAbsoluteDivision(ArrayList<Integer> mad, int arithmeticMean){
 		return meanAbsoluteDivision.findMeanAbsoluteDivision(mad, arithmeticMean);
-//		System.out.println("Result in controller is " + answer);
-//		return answer;
 	}
 }

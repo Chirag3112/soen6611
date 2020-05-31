@@ -11,6 +11,11 @@ import java.util.ArrayList;
  */
 public class MeanAbsoluteDivision {
 	
+	/**
+	 * @param dataset on which MAD calculation to be performed
+	 * @param arithmeticMean which is used to calculate MAD
+	 * @return meanAbsolteDivision
+	 */
 	public float findMeanAbsoluteDivision(ArrayList<Integer> dataset, int arithmeticMean){
 		float meanAbsolteDivision = 0;			
 		float sumOfAllData = 0;
@@ -23,9 +28,9 @@ public class MeanAbsoluteDivision {
 			}
 			sumOfAllData = sumOfAllData +(element - arithmeticMean);
 		}
-		System.out.println("Sum " + sumOfAllData + " dataset size " + dataset.size());
+		
 		meanAbsolteDivision = sumOfAllData / dataset.size();
-		System.out.println("MAD is " + meanAbsolteDivision);
+		
 		return meanAbsolteDivision;			
 	}		
 }
