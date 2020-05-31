@@ -5,6 +5,7 @@ package ca.concordia.soen6611.controller;
 
 import java.util.ArrayList;
 
+import ca.concordia.soen6611.model.ArithmeticMean;
 import ca.concordia.soen6611.model.Calculation;
 import ca.concordia.soen6611.model.Dataset;
 
@@ -17,11 +18,13 @@ public class StatisticalController {
 
 	private Calculation calculate;
 	private Dataset dataSet;
+	private ArithmeticMean aMean;
 	
-	public StatisticalController(Calculation calculate, Dataset dataSet) 
+	public StatisticalController(Calculation calculate, Dataset dataSet, ArithmeticMean aMean) 
 	{ 
 		this.calculate= calculate;
 		this.dataSet= dataSet;
+		this.aMean= aMean;
 	}
 
 	public ArrayList<Integer> generateDataset(int n){
@@ -42,5 +45,9 @@ public class StatisticalController {
 
 	public int findMode(ArrayList<Integer> mod) {
 		return calculate.findMod(mod);
+	}
+	
+	public int findArithmeticMean(ArrayList<Integer> amean) {
+		return aMean.findArithmeticMean(amean);
 	}
 }
