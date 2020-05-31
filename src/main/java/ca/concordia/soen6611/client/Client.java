@@ -12,13 +12,21 @@ import ca.concordia.soen6611.model.Dataset;
 import ca.concordia.soen6611.model.MeanAbsoluteDivision;
 
 /**
+ * This is the main class that triggers controller 
+ * to perform various action on different functionalities.
  * @author Jaiganesh
  * @author chirag
  * @author PIYUSH
  */
 public class Client {
 
+	/** 
+	 * This is the main method that is executed 
+	 * first over the whole application. 
+	 * @param args
+	 */
 	public static void main(final String[] args) {
+		
 		Calculation calculate=new Calculation();
 		Dataset dataSet=new Dataset();
 		ArithmeticMean aMean= new ArithmeticMean();
