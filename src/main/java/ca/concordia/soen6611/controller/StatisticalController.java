@@ -3,6 +3,7 @@
  */
 package ca.concordia.soen6611.controller;
 
+import ca.concordia.soen6611.model.StandardDeviation;
 import java.util.ArrayList;
 
 import ca.concordia.soen6611.model.ArithmeticMean;
@@ -21,6 +22,7 @@ public class StatisticalController {
 	private Dataset dataSet;
 	private ArithmeticMean aMean;
 	private MeanAbsoluteDivision meanAbsoluteDivision;
+	private StandardDeviation sd;
 	
 	/**
 	 * This is the constructor that initializes the class properties
@@ -76,7 +78,6 @@ public class StatisticalController {
 	/**
 	 * This method finds the mode of the data set
 	 * @param mod data set passed as method parameter
-	 * @return mode value of the data set
 	 */
 	public int findMode(ArrayList<Integer> mod) {
 		return calculate.findMod(mod);
@@ -98,5 +99,15 @@ public class StatisticalController {
 	 */
 	public float findMeanAbsoluteDivision(ArrayList<Integer> mad, int arithmeticMean){
 		return meanAbsoluteDivision.findMeanAbsoluteDivision(mad, arithmeticMean);
+	}
+
+	/**
+	 * This method finds the Standard Deviation of dataSet
+	 * @param data
+	 * @param arithmeticMean
+	 * @return  Standard Deviation of dataSet
+	 */
+	public double findStandardDeviation(ArrayList<Integer> data, double arithmeticMean){
+		return  sd.findStandardDeviation(data, arithmeticMean);
 	}
 }

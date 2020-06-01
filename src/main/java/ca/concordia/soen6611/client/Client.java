@@ -42,6 +42,7 @@ public class Client {
 		int mode = controller.findMode(al);
 		int arithmeticMean= controller.findArithmeticMean(al);
 		float meanAbsoluteDivision = controller.findMeanAbsoluteDivision(al, arithmeticMean);
+		double standardDeviation = controller.findStandardDeviation(al, arithmeticMean);
 	
 		System.out.println("Minimum is " + min);
 		System.out.println("Maximum is " + max);
@@ -49,7 +50,9 @@ public class Client {
 		System.out.println("Mode is " + mode);
 		System.out.println("Arithmetic Mean calculated is " + arithmeticMean);
 		System.out.println("Mean Absolute Division(MAD) is " + meanAbsoluteDivision);
-		
-		
+		System.out.println("StandardDeviation  is " + standardDeviation);
+
+
+
 	}
 }
