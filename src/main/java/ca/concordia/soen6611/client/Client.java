@@ -3,6 +3,7 @@
  */
 package ca.concordia.soen6611.client;
 
+import ca.concordia.soen6611.model.StandardDeviation;
 import java.util.ArrayList;
 
 import ca.concordia.soen6611.controller.StatisticalController;
@@ -31,7 +32,8 @@ public class Client {
 		Dataset dataSet=new Dataset();
 		ArithmeticMean aMean= new ArithmeticMean();
 		MeanAbsoluteDivision mAD = new MeanAbsoluteDivision();
-		StatisticalController controller=new StatisticalController(calculate, dataSet, aMean, mAD);
+		StandardDeviation standardD = new StandardDeviation();
+		StatisticalController controller=new StatisticalController(calculate, dataSet, aMean, mAD, standardD);
 		
 		ArrayList<Integer> al= dataSet.generateDataset(1000);
 		System.out.println(al.size());
