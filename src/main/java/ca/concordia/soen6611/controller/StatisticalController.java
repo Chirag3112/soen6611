@@ -31,12 +31,13 @@ public class StatisticalController {
 	 * @param aMean
 	 * @param meanAbsoluteDivision
 	 */
-	public StatisticalController(Calculation calculate, Dataset dataSet, ArithmeticMean aMean, MeanAbsoluteDivision meanAbsoluteDivision) 
+	public StatisticalController(Calculation calculate, Dataset dataSet, ArithmeticMean aMean, MeanAbsoluteDivision meanAbsoluteDivision,StandardDeviation standardD) 
 	{ 
 		this.calculate= calculate;
 		this.dataSet= dataSet;
 		this.aMean= aMean;
 		this.meanAbsoluteDivision = meanAbsoluteDivision;
+		this.sd=standardD;
 	}
 
 	/**
