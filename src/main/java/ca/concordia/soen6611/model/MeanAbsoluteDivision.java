@@ -3,6 +3,7 @@
  */
 package ca.concordia.soen6611.model;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 /**
@@ -26,11 +27,13 @@ public class MeanAbsoluteDivision {
 			} else {
 				sumOfAllData = sumOfAllData + (element - arithmeticMean);
 			}
-			sumOfAllData = sumOfAllData +(element - arithmeticMean);
+			sumOfAllData = sumOfAllData + (element - arithmeticMean);
 		}
 		
 		meanAbsolteDivision = sumOfAllData / dataset.size();
+		DecimalFormat format = new DecimalFormat("#.##");
+		float mad = Float.parseFloat(format.format(meanAbsolteDivision));
 		
-		return meanAbsolteDivision;			
+		return mad;			
 	}		
 }
