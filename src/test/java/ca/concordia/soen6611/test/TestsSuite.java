@@ -7,6 +7,9 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
+import ca.concordia.soen6611.test.testModels.TestArithmeticMean;
+import ca.concordia.soen6611.test.testModels.TestMeanAbsoluteDivison;
+
 /**
  * @author chirag
  *
