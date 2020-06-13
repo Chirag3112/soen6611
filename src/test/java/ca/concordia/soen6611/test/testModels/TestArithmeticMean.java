@@ -22,6 +22,7 @@ import ca.concordia.soen6611.model.ArithmeticMean;
 public class TestArithmeticMean {
 
 	ArrayList<Integer> list;
+	private static final double DELTA = 1e-15;
 	/**
 	 * @throws java.lang.Exception
 	 */
@@ -41,15 +42,15 @@ public class TestArithmeticMean {
 	@Test
 	public void testForValidFindArithmeticMean() {
 		ArithmeticMean am = new ArithmeticMean();
-		int result = am.findArithmeticMean(list);
-		assertEquals(5, result);
+		float result = am.findArithmeticMean(list);
+		assertEquals(new Float(5.5), result, DELTA);
 	}
 	
 	@Test
 	public void testForInvalidFindArithmeticMean() {
 		ArithmeticMean am = new ArithmeticMean();
-		int result = am.findArithmeticMean(list);
-		assertNotEquals(5.5, result);
+		float result = am.findArithmeticMean(list);
+		assertNotEquals(5, result);
 	} 
 
 }
