@@ -8,6 +8,7 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 import ca.concordia.soen6611.test.testModels.TestArithmeticMean;
+import ca.concordia.soen6611.test.testModels.TestCalculation;
 import ca.concordia.soen6611.test.testModels.TestMeanAbsoluteDivison;
 
 /**
@@ -15,7 +16,7 @@ import ca.concordia.soen6611.test.testModels.TestMeanAbsoluteDivison;
  *
  */
 @RunWith(Suite.class)
-@SuiteClasses({TestArithmeticMean.class, TestMeanAbsoluteDivison.class})
+@SuiteClasses({TestCalculation.class, TestArithmeticMean.class, TestMeanAbsoluteDivison.class})
 public class TestsSuite {
 
 }
