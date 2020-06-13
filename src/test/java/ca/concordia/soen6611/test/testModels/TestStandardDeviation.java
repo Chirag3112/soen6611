@@ -48,9 +48,22 @@ public class TestStandardDeviation {
 		double result = sd.power(2);
 		assertEquals(new Double(4.0), result, DELTA);
 	}
+	
+	@Test
+	public void testForInvalidPower() {
+		double result = sd.power(1.5);
+		assertNotEquals(new Double(4.0), result);
+	}
+	
 	@Test
 	public void testForValidSqrt() {
 		double result = sd.sqrt(16);
 		assertEquals(new Double(4.0), result, DELTA);
+	}
+	
+	@Test
+	public void testForInvalidSqrt() {
+		double result = sd.sqrt(15);
+		assertNotEquals(new Double(4.0), result);
 	}
 }
