@@ -29,7 +29,7 @@ public class Client {
 	 */
 	public static void main(final String[] args) {
 		
-		Calculation calculate=new Calculation();
+		Calculation calculate = new Calculation();
 		Dataset dataSet=new Dataset();
 		ArithmeticMean aMean= new ArithmeticMean();
 		MeanAbsoluteDivision mAD = new MeanAbsoluteDivision();
@@ -50,7 +50,7 @@ public class Client {
 		int max = controller.findMaximum(al);
 		int median = controller.findMedian(al);
 		int mode = controller.findMode(al);
-		int arithmeticMean= controller.findArithmeticMean(al);
+		float arithmeticMean = controller.findArithmeticMean(al);
 		float meanAbsoluteDivision = controller.findMeanAbsoluteDivision(al, arithmeticMean);
 		double standardDeviation = controller.findStandardDeviation(al, arithmeticMean);
 	

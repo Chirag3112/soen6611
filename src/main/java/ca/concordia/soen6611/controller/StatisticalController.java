@@ -89,7 +89,7 @@ public class StatisticalController {
 	 * @param amean data set passed as method parameter
 	 * @return the AM value of the data set
 	 */
-	public int findArithmeticMean(ArrayList<Integer> amean) {
+	public float findArithmeticMean(ArrayList<Integer> amean) {
 		return aMean.findArithmeticMean(amean);
 	}
 	
@@ -98,7 +98,7 @@ public class StatisticalController {
 	 * @param arithmeticMean
 	 * @return the MAD value of the data set
 	 */
-	public float findMeanAbsoluteDivision(ArrayList<Integer> mad, int arithmeticMean){
+	public float findMeanAbsoluteDivision(ArrayList<Integer> mad, float arithmeticMean){
 		return meanAbsoluteDivision.findMeanAbsoluteDivision(mad, arithmeticMean);
 	}
 
@@ -108,7 +108,7 @@ public class StatisticalController {
 	 * @param arithmeticMean
 	 * @return  Standard Deviation of dataSet
 	 */
-	public double findStandardDeviation(ArrayList<Integer> data, double arithmeticMean){
+	public double findStandardDeviation(ArrayList<Integer> data, float arithmeticMean){
 		return  sd.findStandardDeviation(data, arithmeticMean);
 	}
 }

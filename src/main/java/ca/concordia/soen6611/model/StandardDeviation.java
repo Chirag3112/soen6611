@@ -1,5 +1,6 @@
 package ca.concordia.soen6611.model;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class StandardDeviation {
@@ -35,13 +36,15 @@ public class StandardDeviation {
      * @param mean Arithmetic Mean
      * @return StandardDeviation
      */
-    public double findStandardDeviation (ArrayList<Integer> data, double mean ){
+    public double findStandardDeviation (ArrayList<Integer> data, float mean ){
         double sum = 0;
         double result;
         for(double number : data){
             sum += power(number - mean);
         }
         result = sqrt(sum / data.size());
+        DecimalFormat format = new DecimalFormat("#.##");
+        result = Double.parseDouble(format.format(result));
         return result;
     }
 
