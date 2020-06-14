@@ -1,6 +1,7 @@
 package ca.concordia.soen6611.model;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * 
@@ -18,11 +19,12 @@ public class Dataset {
 	 */
 	public static ArrayList<Integer> generateDataset(int n){
 		
+        Random rand = new Random();
 		ArrayList<Integer> dataset = new ArrayList<Integer>();
 		
         for(int i = 0; i < n; i++){
         	
-        	dataset.add((int)(Math.random()*1000));
+        	dataset.add(rand.nextInt(1000));
         }
         
         return dataset;
