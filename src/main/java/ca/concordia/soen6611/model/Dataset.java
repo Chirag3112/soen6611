@@ -19,15 +19,14 @@ public class Dataset {
 	 */
 	public ArrayList<Integer> generateDataset(int n){
 		
+        Random rand = new Random();
 		ArrayList<Integer> dataset = new ArrayList<Integer>();
 		Random rand= new Random();
 		
         for(int i = 0; i < n; i++){
-        	
         	int num= rand.nextInt(1001);
         	dataset.add(num);
         }
-        
         return dataset;
     }
 }
