@@ -3,13 +3,13 @@
  */
 package ca.concordia.soen6611.test.testModels;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -45,7 +45,7 @@ public class TestArithmeticMean {
 		float result = am.findArithmeticMean(list);
 		assertEquals(new Float(5.5), result, DELTA);
 	}
-	
+
 	@Test
 	public void testForInvalidFindArithmeticMean() {
 		ArithmeticMean am = new ArithmeticMean();

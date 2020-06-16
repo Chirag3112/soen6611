@@ -50,13 +50,13 @@ public class TestCalculation {
 		int max = calculate.findMax(list);
 		assertEquals(10, max);
 	}
-	
+
 	@Test
 	public void testForValidFindMed() {
 		int median = calculate.findMed(list);
 		assertEquals(2, median);
 	}
-	
+
 	@Test
 	public void testForValidFindMod() {
 		int mode = calculate.findMod(list);

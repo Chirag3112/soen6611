@@ -11,24 +11,23 @@ import java.util.Random;
  *
  */
 public class Dataset {
-	
+
 	/**
 	 * Generates n random numbers between the range 0 to 1000
 	 * @param n the maximum number of values in the dataset
 	 * @return dataset the dataset containing n values between 0 and 1000
 	 */
 	public ArrayList<Integer> generateDataset(int n){
-		
-        Random rand = new Random();
+
+		Random rand = new Random();
 		ArrayList<Integer> dataset = new ArrayList<Integer>();
-		Random rand= new Random();
-		
-        for(int i = 0; i < n; i++){
-        	int num= rand.nextInt(1001);
-        	dataset.add(num);
-        }
-        return dataset;
-    }
+
+		for(int i = 0; i < n; i++){
+			int num= rand.nextInt(1000);
+			dataset.add(num);
+		}
+		return dataset;
+	}
 }
 
 
