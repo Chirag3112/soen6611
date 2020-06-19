@@ -19,11 +19,8 @@ public class ArithmeticMean {
 		float arithmeticMean = 0;
 		final ArrayList<Integer> dataset = arg;
 		for (final Integer i : dataset) {
-			sum=sum+dataset.get(i);
+			sum=sum+i;
 		}
-		/*
-		 * for(int i=0; i<dataset.size(); i++) { sum = sum + dataset.get(i); }
-		 */
 		arithmeticMean = (float)sum / (float)dataset.size();
 		final DecimalFormat format = new DecimalFormat("#.##");
 		arithmeticMean = Float.parseFloat(format.format(arithmeticMean));
