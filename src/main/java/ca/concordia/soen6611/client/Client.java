@@ -3,8 +3,6 @@
  */
 package ca.concordia.soen6611.client;
 
-import java.time.Duration;
-import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -29,7 +27,6 @@ public final class Client {
 	 * @param args
 	 */
 	public static void main(final String[] args) {
-		final Instant start = Instant.now();
 		final Calculation calculate = new Calculation();
 		final Dataset dataSet=new Dataset();
 		final ArithmeticMean aMean= new ArithmeticMean();
@@ -55,10 +52,7 @@ public final class Client {
 		final float arithmeticMean = controller.findArithmeticMean(arrayList);
 		final float meanAbsoluteDivision = controller.findMeanAbsoluteDivision(arrayList, arithmeticMean);
 		final double standardDeviation = controller.findStandardDeviation(arrayList, arithmeticMean);
-		final Instant finish = Instant.now();
-
-	    final long timeElapsed = Duration.between(start, finish).toMillis();
-	    
+			    
 		System.out.println("*********************************************");
 		System.out.println("Minimum is " + min);
 		System.out.println("Maximum is " + max);
@@ -68,7 +62,5 @@ public final class Client {
 		System.out.println("Mean Absolute Division(MAD) is " + meanAbsoluteDivision);
 		System.out.println("Standard Deviation is " + standardDeviation);
 		System.out.println("*********************************************");
-		
-		System.out.println(timeElapsed+" milliSeconds");
 	}
 }
