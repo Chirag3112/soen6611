@@ -17,11 +17,11 @@ public class MeanAbsoluteDivision {
 	 * @param arithmeticMean which is used to calculate MAD
 	 * @return meanAbsolteDivision
 	 */
-	public float findMeanAbsoluteDivision(ArrayList<Integer> dataset, float arithmeticMean){
-		float meanAbsolteDivision = 0;			
+	public float findMeanAbsoluteDivision(final ArrayList<Integer> dataset, final float arithmeticMean){
+		float mAD = 0;			
 		float sumOfAllData = 0;
 
-		for(int element : dataset){
+		for(final int element : dataset){
 			if(element - arithmeticMean < 0){
 				sumOfAllData = sumOfAllData - (element - arithmeticMean);
 			} else {
@@ -30,10 +30,10 @@ public class MeanAbsoluteDivision {
 			sumOfAllData = sumOfAllData + (element - arithmeticMean);
 		}
 		
-		meanAbsolteDivision = sumOfAllData / dataset.size();
-		DecimalFormat format = new DecimalFormat("#.##");
-		meanAbsolteDivision = Float.parseFloat(format.format(meanAbsolteDivision));
+		mAD = sumOfAllData / dataset.size();
+		final DecimalFormat format = new DecimalFormat("#.##");
+		mAD = Float.parseFloat(format.format(mAD));
 		
-		return meanAbsolteDivision;			
+		return mAD;			
 	}		
 }

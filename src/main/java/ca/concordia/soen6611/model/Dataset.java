@@ -17,13 +17,13 @@ public class Dataset {
 	 * @param n the maximum number of values in the dataset
 	 * @return dataset the dataset containing n values between 0 and 1000
 	 */
-	public ArrayList<Integer> generateDataset(int n){
+	public ArrayList<Integer> generateDataset(final int n){
 
-		Random rand = new Random();
-		ArrayList<Integer> dataset = new ArrayList<Integer>();
+		final Random rand = new Random();
+		final ArrayList<Integer> dataset = new ArrayList<Integer>();
 
 		for(int i = 0; i < n; i++){
-			int num= rand.nextInt(1000);
+			final int num= rand.nextInt(1000);
 			dataset.add(num);
 		}
 		return dataset;

@@ -12,16 +12,16 @@ import java.util.Set;
  *
  */
 public class Calculation {
-
 	/**
-	 * Finds the smallest number in the dataset, given in the form of Integer ArrayList.
+	 * Finds the smallest number in the dataset, 
+	 * given in the form of Integer ArrayList.
 	 * @param arg the input dataset containing the number of values
 	 * @return min the smallest number in the dataset
 	 */
-	public int findMin(ArrayList<Integer> arg){
+	public int findMin(final ArrayList<Integer> arg){
 
 		int min = 0;
-		ArrayList<Integer> list = arg;
+		final ArrayList<Integer> list = arg;
 		Collections.sort(list);
 		min = list.get(0);
 		return min;
@@ -29,14 +29,15 @@ public class Calculation {
 	}
 
 	/**
-	 * Finds the largest number in the dataset, given in the form of Integer ArrayList.  
+	 * Finds the largest number in the dataset, 
+	 * given in the form of Integer ArrayList.  
 	 * @param arg the input dataset containing the number of values
 	 * @return max the largest number in the dataset
 	 */
-	public int findMax(ArrayList<Integer> arg){
+	public int findMax(final ArrayList<Integer> arg){
 
 		int max = 0;
-		ArrayList<Integer> list = arg;
+		final ArrayList<Integer> list = arg;
 		Collections.sort(list);
 		max = list.get(list.size() - 1);
 		return max;
@@ -48,10 +49,10 @@ public class Calculation {
 	 * @param arg the input dataset containing the number of values
 	 * @return median the middle number in the dataset
 	 */
-	public int findMed(ArrayList<Integer> med) {
+	public int findMed(final ArrayList<Integer> med) {
 
 		int median=0;
-		ArrayList<Integer> list=med;
+		final ArrayList<Integer> list=med;
 		Collections.sort(list);
 		if(list.size()%2==0) {
 			median= (list.get(list.size()/2)+list.get(list.size()/2 -1))/2;
@@ -63,20 +64,21 @@ public class Calculation {
 	}
 
 	/**
-	 * Finds the most occuring number in the dataset, given in the form of Integer ArrayList.  
+	 * Finds the most occuring number in the dataset, 
+	 * given in the form of Integer ArrayList.  
 	 * @param arg the input dataset containing the number of values
 	 * @return mode the most occuring number in the dataset
 	 */
-	public int findMod(ArrayList<Integer> mod) {
-		ArrayList<Integer> list=mod;
+	public int findMod(final ArrayList<Integer> mod) {
+		final ArrayList<Integer> list=mod;
 		Collections.sort(list);
 		int max = 0;
 		int curr = 0;
 		Integer modeElement =  null;
 
-		Set<Integer> unique = new HashSet<Integer>(list);
+		final Set<Integer> unique = new HashSet<>(list);
 
-		for (Integer key : unique) {
+		for (final Integer key : unique) {
 			curr = Collections.frequency(list, key);
 
 			if(max < curr){

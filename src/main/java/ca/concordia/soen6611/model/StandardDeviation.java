@@ -1,8 +1,15 @@
+/**
+ * 
+ */
 package ca.concordia.soen6611.model;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
+/**
+ * @author Bin
+ *
+ */
 public class StandardDeviation {
 
     /**
@@ -10,7 +17,7 @@ public class StandardDeviation {
      * @param m The number you want to square
      * @return squares
      */
-    public double power(double m){
+    public double power(final double m){
         return m * m;
     }
 
@@ -20,10 +27,11 @@ public class StandardDeviation {
      * @return sqrt
      */
 
-    public double sqrt(double m) {
+    public double sqrt(final double m) {
         double i = 0;
-        while ((i * i) <= m)
+        while ((i * i) <= m) {
             i += 0.1;
+        }
         for (int j = 0; j < 10; j++) {
             i = (m / i + i) / 2;
         }
@@ -36,14 +44,14 @@ public class StandardDeviation {
      * @param mean Arithmetic Mean
      * @return StandardDeviation
      */
-    public double findStandardDeviation (ArrayList<Integer> data, float mean ){
+    public double findStandardDeviation (final ArrayList<Integer> data, final float mean ){
         double sum = 0;
         double result;
-        for(double number : data){
+        for(final double number : data){
             sum += power(number - mean);
         }
         result = sqrt(sum / data.size());
-        DecimalFormat format = new DecimalFormat("#.##");
+        final DecimalFormat format = new DecimalFormat("#.##");
         result = Double.parseDouble(format.format(result));
         return result;
     }

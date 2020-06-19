@@ -1,14 +1,12 @@
 /**
  * 
  */
-package ca.concordia.soen6611.test.testModels;
+package ca.concordia.soen6611.test.testmodels;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
-
 import java.util.ArrayList;
 import java.util.Arrays;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package ca.concordia.soen6611.test.testModels;
+package ca.concordia.soen6611.test.testmodels;
 
 import static org.junit.Assert.*;
 

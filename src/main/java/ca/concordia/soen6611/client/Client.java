@@ -3,7 +3,8 @@
  */
 package ca.concordia.soen6611.client;
 
-import ca.concordia.soen6611.model.StandardDeviation;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -12,6 +13,7 @@ import ca.concordia.soen6611.model.ArithmeticMean;
 import ca.concordia.soen6611.model.Calculation;
 import ca.concordia.soen6611.model.Dataset;
 import ca.concordia.soen6611.model.MeanAbsoluteDivision;
+import ca.concordia.soen6611.model.StandardDeviation;
 
 /**
  * This is the main class that triggers controller 
@@ -20,40 +22,43 @@ import ca.concordia.soen6611.model.MeanAbsoluteDivision;
  * @author chirag
  * @author PIYUSH
  */
-public class Client {
-
+public final class Client {
 	/** 
 	 * This is the main method that is executed 
 	 * first over the whole application. 
 	 * @param args
 	 */
 	public static void main(final String[] args) {
-		
-		Calculation calculate = new Calculation();
-		Dataset dataSet=new Dataset();
-		ArithmeticMean aMean= new ArithmeticMean();
-		MeanAbsoluteDivision mAD = new MeanAbsoluteDivision();
-		StandardDeviation standardD = new StandardDeviation();
-		StatisticalController controller=new StatisticalController(calculate, dataSet, aMean, mAD, standardD);
-		
+		final Instant start = Instant.now();
+		final Calculation calculate = new Calculation();
+		final Dataset dataSet=new Dataset();
+		final ArithmeticMean aMean= new ArithmeticMean();
+		final MeanAbsoluteDivision mAD = new MeanAbsoluteDivision();
+		final StandardDeviation standardD = new StandardDeviation();
+		final StatisticalController controller=new StatisticalController(calculate, dataSet, aMean, mAD, standardD);
+
 		System.out.println("Enter the size of dataset(size >= 1000): ");
-		Scanner scan = new Scanner(System.in);
+		final Scanner scan = new Scanner(System.in);
 		int dataSize = scan.nextInt();
 		while(dataSize < 1000){
 			System.out.println("Size is less than 1000. Please enter the size of data-set(>=1000): ");
 			dataSize = scan.nextInt();
 		}
-		ArrayList<Integer> al= dataSet.generateDataset(dataSize);
-		System.out.println("Generated data size is " + al.size());
-		
-		int min = controller.findMinimum(al);
-		int max = controller.findMaximum(al);
-		int median = controller.findMedian(al);
-		int mode = controller.findMode(al);
-		float arithmeticMean = controller.findArithmeticMean(al);
-		float meanAbsoluteDivision = controller.findMeanAbsoluteDivision(al, arithmeticMean);
-		double standardDeviation = controller.findStandardDeviation(al, arithmeticMean);
-	
+		scan.close();
+		final ArrayList<Integer> arrayList= dataSet.generateDataset(dataSize);
+		System.out.println("Generated data size is " + arrayList.size());
+
+		final int min = controller.findMinimum(arrayList);
+		final int max = controller.findMaximum(arrayList);
+		final int median = controller.findMedian(arrayList);
+		final int mode = controller.findMode(arrayList);
+		final float arithmeticMean = controller.findArithmeticMean(arrayList);
+		final float meanAbsoluteDivision = controller.findMeanAbsoluteDivision(arrayList, arithmeticMean);
+		final double standardDeviation = controller.findStandardDeviation(arrayList, arithmeticMean);
+		final Instant finish = Instant.now();
+
+	    final long timeElapsed = Duration.between(start, finish).toMillis();
+	    
 		System.out.println("*********************************************");
 		System.out.println("Minimum is " + min);
 		System.out.println("Maximum is " + max);
@@ -63,7 +68,7 @@ public class Client {
 		System.out.println("Mean Absolute Division(MAD) is " + meanAbsoluteDivision);
 		System.out.println("Standard Deviation is " + standardDeviation);
 		System.out.println("*********************************************");
-
-
+		
+		System.out.println(timeElapsed+" milliSeconds");
 	}
 }
